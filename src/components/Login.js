@@ -7,7 +7,6 @@ import React, { useRef, useState } from "react";
 import validate from "../utils/validate";
 import Header from "./Header";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -15,7 +14,6 @@ const Login = () => {
   const [signIn, setSignin] = useState(true);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [Loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -60,7 +58,6 @@ const Login = () => {
                 })
               );
               setLoading(true);
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error);
@@ -70,10 +67,11 @@ const Login = () => {
           console.log(user);
         })
         .catch((error) => {
+          setLoading(false);
           const errorCode = error.code;
           const errorMessage = error.message;
-          // setErrorMessage("User already Exists. Try Signing in.");
-          setErrorMessage(errorCode + " " + errorMessage);
+          setErrorMessage("User already Exists. Try Signing in.");
+          // setErrorMessage(errorCode + " " + errorMessage);
         });
     } else {
       setLoading(true);
@@ -84,7 +82,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          navigate("/browse");
+
           const user = userCredential.user;
           console.log(user);
         })
@@ -165,11 +163,8 @@ const Login = () => {
             </button>
           )}
         </div>
-        {/* <button onClick={handleformSubmit} type="button" class="bg-indigo-500 ..." disabled>
-          <svg class="animate-spin w-full font-bold text-lg mt-8 bg-red-700 p-4 rounded-md" viewBox="0 0 24 24"></svg>
-          Processing...
-        </button>   */}
-        <p className="my-4 ">
+
+        <p className="my-4 text-center ">
           <span className="text-md px-2 text-gray-200">
             {signIn ? "New to Cinemax?" : "Already an user? "}
           </span>{" "}
@@ -179,10 +174,6 @@ const Login = () => {
             }}
             className="text-xl font-bold hover:underline cursor-pointer"
           >
-            <svg
-              class="animate-spin h-5 w-5 mr-3 ..."
-              viewBox="0 0 24 24"
-            ></svg>
             {signIn ? "Sign Up Now" : "Sign in"}
           </span>
         </p>
