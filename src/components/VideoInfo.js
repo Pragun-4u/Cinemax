@@ -2,8 +2,8 @@ import React from "react";
 
 const VideoInfo = ({ title, overview, id }) => {
   return (
-    <div className=" pt-[15%] aspect-video px-12 h-fit  absolute bg-gradient-to-r from-black text-white">
-      <h1 className="text-5xl mb-2 font-bold">{title}</h1>
+    <div className="py-[15%] aspect-video px-12 h-fit  absolute bg-gradient-to-r from-black text-white">
+      <h1 className="text-6xl mb-2 font-bold">{title}</h1>
       <h1 className="w-1/3 text-lg font-sans py-6">{overview}</h1>
       <div className="flex ">
         <button className="bg-white hover:opacity-80 text-lg px-8 py-2 h-12 rounded-lg font-bold text-black  flex ">

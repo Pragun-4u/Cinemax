@@ -12,5 +12,7 @@ export const API_OPTION = {
   },
 };
 
+export const MOVIE_IMG_CDN = "https://image.tmdb.org/t/p/w500/";
+
 export const NOW_PLAYING_API =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
