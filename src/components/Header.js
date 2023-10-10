@@ -40,34 +40,36 @@ const Header = () => {
             ></img>
           </Link>
         </div>
-        <div className=" text-white absolute flex right-0 top-[3%] z-10 ">
-          <div className="flex">
-            <h1 className=" my-auto mx-2 text-white">
-              Hello :{" "}
-              <span className="text-orange-300 font-bold">
-                {" "}
-                {userInfo?.displayName}{" "}
-              </span>
-            </h1>
-            <img
-              className="h-14   my-auto"
-              src={AVATAR_URL}
-              // src={userInfo?.photoUrl}
-            />
+        {userInfo !== null && (
+          <div className=" text-white absolute flex right-0 top-[3%] z-10 ">
+            <div className="flex">
+              <h1 className=" my-auto mx-2 text-white">
+                Hello :{" "}
+                <span className="text-orange-300 font-bold">
+                  {" "}
+                  {userInfo?.displayName}{" "}
+                </span>
+              </h1>
+              <img
+                className="h-14   my-auto"
+                src={AVATAR_URL}
+                // src={userInfo?.photoUrl}
+              />
+            </div>
+            <button
+              onClick={() => {
+                signOut(auth)
+                  .then(() => {})
+                  .catch((error) => {
+                    navigate("/Error");
+                  });
+              }}
+              className="rounded-lg mx-2 px-2 h-10 my-auto text-white hover:bg-red-500 "
+            >
+              Sign Out
+            </button>
           </div>
-          <button
-            onClick={() => {
-              signOut(auth)
-                .then(() => {})
-                .catch((error) => {
-                  navigate("/Error");
-                });
-            }}
-            className="rounded-lg mx-2 px-2 h-10 my-auto text-white hover:bg-red-500 "
-          >
-            Sign Out
-          </button>
-        </div>
+        )}
       </div>
     </>
   );
