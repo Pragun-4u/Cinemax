@@ -9,6 +9,7 @@ import Header from "./Header";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG_CDN } from "../utils/constants";
 
 const Login = () => {
   const [signIn, setSignin] = useState(true);
@@ -101,7 +102,7 @@ const Login = () => {
       <div className="absolute">
         <img
           className="w-screen h-screen bg-cover bg-no-repeat"
-          src="https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg"
+          src={BG_IMG_CDN}
         ></img>
       </div>
       <form

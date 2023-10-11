@@ -6,22 +6,32 @@ import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRated from "../hooks/useTopRated";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import { useSelector } from "react-redux";
+import GPTPage from "./GPTPage";
 const Browse = () => {
   useNowPlayingMovies();
   usePopularMovies();
   useTopRated();
   useUpcomingMovies();
 
+  const GPTVisible = useSelector((store) => store?.GPT.showGPTPage);
+
   return (
     <>
-      <div className=" bg-transparent">
-        <div>
+      <div>
+        <div className="">
           <Header />
         </div>
       </div>
       <div>
-        <MainContainer />
-        <SecondaryContainer />
+        {GPTVisible ? (
+          <GPTPage />
+        ) : (
+          <>
+            <MainContainer />
+            <SecondaryContainer />
+          </>
+        )}
       </div>
     </>
   );

@@ -11,8 +11,16 @@ export const API_OPTION = {
     Authorization: process.env.REACT_APP_API_OPTION,
   },
 };
+export const BG_IMG_CDN =
+  "https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg";
 
 export const MOVIE_IMG_CDN = "https://image.tmdb.org/t/p/w500/";
 
 export const NOW_PLAYING_API =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+
+export const LangKey = [
+  { identifier: "en", value: "English" },
+  { identifier: "hindi", value: "Hindi" },
+  { identifier: "marathi", value: "Marathi" },
+];
