@@ -4,13 +4,17 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRated from "../hooks/useTopRated";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 const Browse = () => {
   useNowPlayingMovies();
   usePopularMovies();
+  useTopRated();
+  useUpcomingMovies();
 
   return (
     <>
-      <div className="w-full flex justify-between h-24 bg-black  ">
+      <div className=" bg-transparent">
         <div>
           <Header />
         </div>

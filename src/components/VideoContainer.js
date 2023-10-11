@@ -4,8 +4,8 @@ import Shimmer from "./Shimmer";
 
 const VideoContainer = ({ title, movies }) => {
   return (
-    <div className="">
-      <h1 className="text-3xl py-3">{title}</h1>
+    <div className="mx-10">
+      <h1 className="text-3xl px-2 py-3">{title}</h1>
       <div className="flex  hover:overflow-x-scroll overflow-y-hidden">
         <div className="flex py-2">
           {movies === null ? (

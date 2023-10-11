@@ -1,5 +1,5 @@
 export const LOGO =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Cinemax_2016.svg/1200px-Cinemax_2016.svg.png";
+  "https://unicorn-cdn.b-cdn.net/b07bb42f-73d5-4169-9ef1-83220ca85090/cinemax-logo.png";
 
 export const AVATAR_URL =
   "https://pro2-bar-s3-cdn-cf2.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/351efdd5c9879db23df33bde_rw_600.png?h=e1e19e4f0eb5c66ca9eceb0e9438b2ca";

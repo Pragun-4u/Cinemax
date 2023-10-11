@@ -31,21 +31,18 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between">
-        <div className="w-1/8 absolute z-10 ">
+      <div className="  absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+        <div className="w-1/8 absolute z-10  ">
           <Link to="/">
-            <img
-              className="  mx-10 my-2 h-20 invert bg-gradient-to-tr  from-white"
-              src={LOGO}
-            ></img>
+            <img className="  mx-10 my-2 h-20 invert " src={LOGO}></img>
           </Link>
         </div>
         {userInfo !== null && (
-          <div className=" text-white absolute flex right-0 top-[3%] z-10 ">
+          <div className=" text-white absolute flex right-0 top-[3%] z-10 py-5 ">
             <div className="flex">
               <h1 className=" my-auto mx-2 text-white">
                 Hello :{" "}
-                <span className="text-orange-300 font-bold">
+                <span className="  text-orange-500 font-bold">
                   {" "}
                   {userInfo?.displayName}{" "}
                 </span>

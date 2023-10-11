@@ -3,7 +3,7 @@ import { MOVIE_IMG_CDN } from "../utils/constants";
 
 const VideoCard = ({ original_title, poster_path }) => {
   return (
-    <div className="mx-1 w-48 transition py-1 ease-in-out delay-350 hover:scale-125  shadow-lg shadow-cyan-500/50">
+    <div className="mx-2 w-48 transition py-1 ease-in-out delay-350 hover:scale-125  shadow-lg shadow-cyan-500/50">
       <img
         alt="Movie Card"
         className="w-auto rounded-lg "
