@@ -11,6 +11,10 @@ export const API_OPTION = {
     Authorization: process.env.REACT_APP_API_OPTION,
   },
 };
+export const POSTER_UNAVAILABLE =
+  "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg";
+export const ALT_BG_IMG_CDN =
+  "https://www.plexopedia.com/images/movie-posters-not-showing-1200w.jpg";
 export const BG_IMG_CDN =
   "https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg";
 
