@@ -1,6 +1,7 @@
 import React from "react";
 import VideoCard from "./VideoCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const VideoContainer = ({ title, movies }) => {
   return (
@@ -12,11 +13,15 @@ const VideoContainer = ({ title, movies }) => {
             <Shimmer />
           ) : (
             movies?.map((eachMovie) => (
-              <VideoCard
+              <Link
+                to={"/results?searchquery=" + eachMovie.id}
                 key={eachMovie.id}
-                original_title={eachMovie?.original_title}
-                poster_path={eachMovie?.poster_path}
-              />
+              >
+                <VideoCard
+                  original_title={eachMovie?.original_title}
+                  poster_path={eachMovie?.poster_path}
+                />
+              </Link>
             ))
           )}
         </div>

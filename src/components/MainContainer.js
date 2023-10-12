@@ -25,7 +25,7 @@ const MainContainer = () => {
   return (
     <div className="">
       {/* {showElement && <VideoInfo title={original_title} overview={overview} />} */}
-      {<VideoInfo title={original_title} overview={overview} />}
+      {<VideoInfo title={original_title} id={id} overview={overview} />}
       <BackgroundVideo id={id} />
     </div>
   );

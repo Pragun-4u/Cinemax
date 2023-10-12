@@ -4,6 +4,7 @@ import Login from "./Login";
 import Browse from "./Browse";
 import { useDispatch } from "react-redux";
 import ErrorPage from "./ErrorPage";
+import MovieDetails from "./MovieDetails";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -15,6 +16,10 @@ const Body = () => {
     {
       path: "/browse",
       element: <Browse />,
+    },
+    {
+      path: "/results",
+      element: <MovieDetails />,
     },
   ]);
 
