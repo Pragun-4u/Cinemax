@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import VideoInfo from "./VideoInfo";
 import BackgroundVideo from "./BackgroundVideo";
 import { useSelector } from "react-redux";

@@ -7,6 +7,7 @@ const GPTPage = () => {
   return (
     <>
       <img
+        alt="Background Image"
         className="w-full  fixed h-screen object-cover bg-no-repeat "
         src={ALT_BG_IMG_CDN}
       ></img>

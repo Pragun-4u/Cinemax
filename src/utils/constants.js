@@ -20,6 +20,8 @@ export const BG_IMG_CDN =
 
 export const MOVIE_IMG_CDN = "https://image.tmdb.org/t/p/w500/";
 
+export const PROFILE_IMG_UNAVAILABLE =
+  "https://st2.depositphotos.com/1009634/7235/v/950/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg";
 export const NOW_PLAYING_API =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
 

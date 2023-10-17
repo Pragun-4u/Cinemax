@@ -1,20 +1,17 @@
 import React from "react";
-import { MOVIE_IMG_CDN, POSTER_UNAVAILABLE } from "../utils/constants";
 
-const VideoCard = ({ original_title, poster_path }) => {
+const VideoCard = ({ id }) => {
   return (
-    <div className="mx-2 h-full  w-32 md:w-48 transition py-1 ease-in-out delay-350 hover:scale-125 cursor-pointer  shadow-lg shadow-cyan-500/50">
-      <img
-        alt="Movie Card"
-        className="w-full  md:w-auto rounded-lg "
-        src={
-          poster_path === null
-            ? POSTER_UNAVAILABLE
-            : MOVIE_IMG_CDN + poster_path
-        }
-      ></img>
-      <h1 className="text-center text-sm md:text-lg">{original_title}</h1>
-    </div>
+    <iframe
+      className="w-full h-auto md:h-auto  md:mx-1 aspect-video"
+      src={
+        "https://www.youtube.com/embed/" +
+        id +
+        "?&showinfo=0&controls=0&autohide=1"
+      }
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe>
   );
 };
 

@@ -101,6 +101,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
+          alt="Background Image"
           className="w-screen h-screen bg-cover bg-no-repeat"
           src={BG_IMG_CDN}
         ></img>

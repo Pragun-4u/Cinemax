@@ -39,7 +39,11 @@ const Header = () => {
       >
         <div className="w-screen md:w-1/8 absolute z-10 md:block flex justify-center  ">
           <Link to="/">
-            <img className="  mx-10 my-2 h-16 md:h-20 invert " src={LOGO}></img>
+            <img
+              alt="LOGO"
+              className="  mx-10 my-2 h-16 md:h-20 invert "
+              src={LOGO}
+            ></img>
           </Link>
         </div>
         {userInfo !== null && (

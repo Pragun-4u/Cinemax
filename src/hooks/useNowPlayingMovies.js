@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { API_OPTION } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addtoNowPlaying } from "../utils/movieSlice";

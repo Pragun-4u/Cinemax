@@ -29,8 +29,24 @@ const movieSlice = createSlice({
     addtoMovieDetails: (state, action) => {
       state.MovieDetails = action.payload;
     },
+    addtoMovieDetailsCredit: (state, action) => {
+      const credits = action.payload;
+      state.MovieDetails = { ...state.MovieDetails, credits };
+    },
+    addtoMovieDetailsRecommendations: (state, action) => {
+      const Recommendations = action.payload;
+      state.MovieDetails = { ...state.MovieDetails, Recommendations };
+    },
+    addtoMovieDetailsID: (state, action) => {
+      const results = action.payload;
+      state.MovieDetails = { ...state.MovieDetails, results };
+    },
+    addtoMovieDetailsSimilar: (state, action) => {
+      const Similar = action.payload;
+      state.MovieDetails = { ...state.MovieDetails, Similar };
+    },
     clearMovieDetails: (state) => {
-      state.MovieDetails = null;
+      state.MovieDetails = {};
     },
   },
 });
@@ -42,5 +58,9 @@ export const {
   addtoUpcomingMovies,
   addtoMovieDetails,
   clearMovieDetails,
+  addtoMovieDetailsID,
+  addtoMovieDetailsCredit,
+  addtoMovieDetailsRecommendations,
+  addtoMovieDetailsSimilar,
 } = movieSlice.actions;
 export default movieSlice.reducer;

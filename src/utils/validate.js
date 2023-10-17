@@ -1,5 +1,3 @@
-import React from "react";
-
 const validate = ({ name, email, password }) => {
   if (name !== undefined) {
     const nameError = /^[a-zA-Z]+ [a-zA-Z]+$/.test(name);
