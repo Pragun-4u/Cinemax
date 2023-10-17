@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import useMovieDetails from "../hooks/useMovieDetails";
+import useMovieDetails from "../hooks/MovieDetails/useMovieDetails";
 import {
   ALT_BG_IMG_CDN,
   MOVIE_IMG_CDN,
@@ -12,15 +12,18 @@ import Loader from "./Loader";
 import VideoCard from "./VideoCard";
 import CastMemberCard from "./CastMemberCard";
 import VideoContainer from "./VideoContainer";
+import useFullMovieDetails from "../hooks/MovieDetails/useFullMovieDetails";
 
 const MovieDetails = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const [showVideo, setshowVideo] = useState(false);
-  const MovieDetails = useSelector((store) => store.movie?.MovieDetails);
-  useMovieDetails(searchParams.get("searchquery"));
-  // const MovieDetails = null;
-  if (MovieDetails === null) {
+  const [showVideo, setshowVideo] = useState(true);
+
+  const Details = useSelector((store) => store.movie?.MovieDetails);
+  useFullMovieDetails(searchParams.get("searchquery"));
+  // const Details = null;
+  console.log(Details);
+  if (Details?.length === 0) {
     return (
       <div className="w-screen h-screen bg-slate-800">
         <Loader />
@@ -42,8 +45,14 @@ const MovieDetails = () => {
     revenue,
     budget,
     genres,
-  } = MovieDetails;
-  // console.log(MovieDetails?.results?.[0].key);
+  } = Details[0];
+
+  // console.log(Details?.results?.[0].key);
+
+  // console.log(Details[2]);
+
+  console.log(Details[4]?.results?.slice(0, 10));
+  // return null;
   return (
     <div className="w-screen">
       <div className="absolute text-white rounded-lg  w-screen  justify-center  py-7 bg-black bg-opacity-50 z-10 md:my-[5%] md:mx-[10%] md:w-[80%] ">
@@ -94,11 +103,13 @@ const MovieDetails = () => {
                 <span className="font-bold">{release_date}</span>
               </h1>
               Genres:
-              {genres?.map((genre) => (
-                <span className="italic font-bold px-1" key={genre.id}>
-                  {genre.name + ","}
-                </span>
-              ))}
+              <div className="flex flex-wrap">
+                {genres?.map((genre) => (
+                  <span className="italic font-bold px-1" key={genre.id}>
+                    {genre.name + ","}
+                  </span>
+                ))}
+              </div>
             </div>
             <div className="text-green-400 font-semibold">
               <span>Budget: ${convertNumber(budget)}</span>
@@ -125,11 +136,13 @@ const MovieDetails = () => {
             </div>
             <div className="my-2">
               Available in :
-              {spoken_languages?.map((lang) => (
-                <span className="mx-1" key={lang.name}>
-                  {lang.english_name}
-                </span>
-              ))}
+              <div className="flex flex-wrap">
+                {spoken_languages?.map((lang) => (
+                  <span className="mx-1" key={lang.name}>
+                    {lang.english_name}
+                  </span>
+                ))}
+              </div>
             </div>
             {production_companies?.[0]?.logo_path !== null && (
               <div className="flex flex-wrap my-4 w-fit bg-white bg-opacity-50 py-2">
@@ -153,7 +166,7 @@ const MovieDetails = () => {
         <div className="block">
           <h1 className="text-2xl md:text-3xl my-2 text-center">Cast</h1>
           <div className="flex overflow-x-scroll">
-            {MovieDetails?.credits?.map((cast) => (
+            {Details[1]?.cast?.map((cast) => (
               <CastMemberCard key={cast.id} {...cast} />
             ))}
           </div>
@@ -199,21 +212,43 @@ const MovieDetails = () => {
           </div>
           {showVideo && (
             <div className="flex overflow-x-scroll">
-              {MovieDetails?.results?.map((eachVideo) => (
-                <VideoCard key={eachVideo?.id} id={eachVideo?.key} />
-              ))}
+              {Details[4]?.results?.length === 0 ? (
+                <h1>No Videos Available</h1>
+              ) : (
+                Details[4]?.results
+                  ?.slice(0, 5)
+                  .map((eachVideo) => (
+                    <VideoCard key={eachVideo?.id} id={eachVideo?.key} />
+                  ))
+              )}
             </div>
           )}
         </div>
-        <div className="block overflow-hidden">
-          <VideoContainer
-            title={"Recommendations"}
-            movies={MovieDetails?.Recommendations}
-          />
-        </div>
-        <div className="block overflow-hidden">
-          <VideoContainer title={"Similar"} movies={MovieDetails?.Similar} />
-        </div>
+        {
+          <div className="block overflow-hidden">
+            <VideoContainer
+              title={
+                Details[2]?.results?.length === 0
+                  ? " No Recommendations Available"
+                  : "Recommendations: " + Details[2]?.results?.length
+              }
+              movies={Details[2]?.results}
+            />
+          </div>
+        }
+
+        {
+          <div className="block overflow-hidden">
+            <VideoContainer
+              title={
+                Details[3]?.results?.length === 0
+                  ? "No Similar Videos Available"
+                  : "Similar: " + Details[3]?.results?.length
+              }
+              movies={Details[3]?.results}
+            />
+          </div>
+        }
       </div>
       <div>
         <img

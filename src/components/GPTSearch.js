@@ -40,7 +40,7 @@ const GPTSearch = () => {
         ></input>
         <button
           onClick={HandleSearchText}
-          className="md:p-2 px-4 m-2 mx-[35%] md:mx-0 py-4 hover:bg-red-400 text-white font-bold bg-red-500 rounded-lg"
+          className="md:p-2 px-4 m-2 mx-[37%] md:mx-0 py-4 hover:bg-red-400 text-white font-bold bg-red-500 rounded-lg"
         >
           {lang[LangKey].Search}
         </button>
