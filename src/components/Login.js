@@ -65,7 +65,7 @@ const Login = () => {
               setLoading(false);
               // ...
             });
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           setLoading(false);
@@ -85,7 +85,7 @@ const Login = () => {
           // Signed in
 
           const user = userCredential.user;
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           setLoading(false);
@@ -139,7 +139,7 @@ const Login = () => {
               <div role="status">
                 <svg
                   aria-hidden="true"
-                  class="h-6 mr-2 w-full  text-center  text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  className="h-6 mr-2 w-full  text-center  text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"

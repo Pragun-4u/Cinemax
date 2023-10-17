@@ -7,10 +7,10 @@ const GPTPage = () => {
   return (
     <>
       <img
-        className="w-full absolute h-screen bg-cover bg-no-repeat "
+        className="w-full  fixed h-screen object-cover bg-no-repeat "
         src={ALT_BG_IMG_CDN}
       ></img>
-      <div className="relative  z-10">
+      <div className="">
         <GPTSearch />
         <GPTSearchRecommendation />
       </div>

@@ -4,18 +4,23 @@ import { useNavigate } from "react-router-dom";
 const VideoInfo = ({ title, overview, id }) => {
   const navigate = useNavigate();
   return (
-    <div className="py-[15%] aspect-video px-12 h-fit  absolute bg-gradient-to-r from-black text-white">
-      <h1 className="text-6xl mb-2 font-bold">{title}</h1>
-      <h1 className="w-1/3 text-lg font-sans py-6">{overview}</h1>
-      <div className="flex ">
-        <button className="bg-white hover:opacity-80 text-lg px-8 py-2 h-12 rounded-lg font-bold text-black  flex ">
+    <div className="py-[18%] md:py-[15%] aspect-video  px-4 md:px-12 h-fit  absolute bg-gradient-to-r from-black text-white">
+      <h1 className="text-xl md:text-6xl  font-bold">{title}</h1>
+      <div className="hidden md:block pr-10 md:pr-0">
+        <h1 className="md:w-1/3 w-4/5 md:text-lg text-xs text-left font-sans md:py-6  ">
+          {overview.length > 200 ? overview.slice(0, 200) + " ..." : overview}
+        </h1>
+      </div>
+      <div className="flex mt-2 pb-2">
+        <button className="text-sm h-6 px-2 bg-white hover:opacity-80 md:text-lg md:px-8 md:py-2 md:h-12 rounded-lg font-bold text-black  flex ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 mt-1 h-6"
+            className="w-4   h-
+            4 md:w-6 mt-1 md:h-6"
           >
             <path
               strokeLinecap="round"
@@ -27,7 +32,7 @@ const VideoInfo = ({ title, overview, id }) => {
         </button>
         <button
           onClick={() => navigate("/results?searchquery=" + id)}
-          className="bg-gray-300 bg-opacity-50 mx-2 px-8 py-3 h-12 rounded-lg font-bold text-black  flex"
+          className="bg-gray-300 text-sm md:text-lg h-6 px-2 bg-opacity-50 mx-2 md:px-8 md:py-2 md:h-12 rounded-lg mb:font-bold text-black  flex"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

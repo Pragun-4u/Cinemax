@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const VideoContainer = ({ title, movies }) => {
   return (
-    <div className="mx-10">
-      <h1 className="text-3xl px-2 py-3">{title}</h1>
+    <div className="px-4 md:px-10 w-screen overflow-x-hidden">
+      <h1 className="text-2xl  md:text-3xl md:px-1 py-3">{title}</h1>
       <div className="flex  hover:overflow-x-scroll overflow-y-hidden">
-        <div className="flex py-2">
+        <div className="flex py-2 ">
           {movies === null ? (
             <Shimmer />
           ) : (

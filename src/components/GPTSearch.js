@@ -11,7 +11,7 @@ const GPTSearch = () => {
 
   const HandleSearchText = async () => {
     dispatch(LoadingState());
-    console.log(searchText.current.value);
+    // console.log(searchText.current.value);
     const { TMDBMovies, gptMovies } = await useMoviesbyGPT(
       searchText.current.value
     );
@@ -23,24 +23,24 @@ const GPTSearch = () => {
         movieResults: TMDBMovies,
       })
     );
-    console.log(TMDBMovies, gptMovies);
+    // console.log(TMDBMovies, gptMovies);
   };
 
   return (
-    <div className="py-[4%] w-screen my-[5%]   absolute flex justify-center">
+    <div className="py-[4%] w-screen md:my-[5%]  my-[40%]  absolute flex justify-center">
       <form
-        className=" py-4  flex justify-center w-3/5 "
+        className=" py-4  md:flex justify-center w-screen md:w-3/5 "
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-2 hover:bg-orange-200 font-bold rounded-xl opacity-100 py-4 w-3/5 text-center m-2"
+          className="p-2  hover:bg-orange-200 font-bold rounded-xl opacity-100 py-4 w-screen md:w-4/5 text-center md:m-2"
           placeholder={lang[LangKey].GPTPlaceholder}
         ></input>
         <button
           onClick={HandleSearchText}
-          className="p-2 px-4 m-2 py-4 text-white font-bold bg-red-500 rounded-lg"
+          className="md:p-2 px-4 m-2 mx-[35%] md:mx-0 py-4 hover:bg-red-400 text-white font-bold bg-red-500 rounded-lg"
         >
           {lang[LangKey].Search}
         </button>

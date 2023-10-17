@@ -9,6 +9,7 @@ const MovieDetails = () => {
   const [searchParams] = useSearchParams();
   const MovieDetails = useSelector((store) => store.movie?.MovieDetails);
   useMovieDetails(searchParams.get("searchquery"));
+  // console.log(MovieDetails);
   if (MovieDetails === null) return;
   const {
     backdrop_path,
@@ -88,6 +89,7 @@ const MovieDetails = () => {
           <div className="flex my-4 w-fit bg-white py-2">
             {production_companies.map((comp) => (
               <img
+                key={comp?.id}
                 className="h-8 mx-2 "
                 src={
                   comp?.logo_path === null

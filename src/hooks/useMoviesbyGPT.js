@@ -24,12 +24,12 @@ const useMoviesbyGPT = async (Search) => {
   });
 
   const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
-  console.log(gptMovies);
+  // console.log(gptMovies);
 
   const PromiseArray = gptMovies.map((eachMovie) => GetMovieInfo(eachMovie));
 
   const TMDBMovies = await Promise.all(PromiseArray);
-  console.log(TMDBMovies);
+  // console.log(TMDBMovies);
 
   return { TMDBMovies, gptMovies };
 };

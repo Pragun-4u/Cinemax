@@ -23,7 +23,7 @@ const MainContainer = () => {
   const { original_title, overview, id } = MainMovie;
 
   return (
-    <div className="">
+    <div className="pt-[35%] bg-black md:pt-0 ">
       {/* {showElement && <VideoInfo title={original_title} overview={overview} />} */}
       {<VideoInfo title={original_title} id={id} overview={overview} />}
       <BackgroundVideo id={id} />

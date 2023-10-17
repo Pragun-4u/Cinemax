@@ -1,12 +1,12 @@
 import React from "react";
 
 const Shimmer = () => {
-  return Array(10)
+  return Array(8)
     .fill(" ")
     .map((index) => (
       <div
         key={Math.random()}
-        className="animate-pulse w-48 h-72 mx-2 bg-slate-100"
+        className="animate-pulse w-28 h-36 md:w-48 md:h-72 m-2 bg-slate-100"
       ></div>
     ));
 };
