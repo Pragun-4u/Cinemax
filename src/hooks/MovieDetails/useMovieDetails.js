@@ -15,9 +15,9 @@ const useMovieDetails = (movieId) => {
     );
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // dispatch(addtoMovieDetails(json));
-    console.log("Movie Details updated");
+    // console.log("Movie Details updated");
   };
 
   useEffect(() => {

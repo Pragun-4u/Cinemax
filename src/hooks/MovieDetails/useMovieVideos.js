@@ -11,9 +11,9 @@ const useMovieVideos = (movieId) => {
       API_OPTION
     );
     const json = await data.json();
-    console.log(json?.results);
+    // console.log(json?.results);
     // dispatch(addtoMovieDetailsID(json?.results));
-    console.log("Videos updated");
+    // console.log("Videos updated");
   };
   useEffect(() => {
     getMovieVideos();

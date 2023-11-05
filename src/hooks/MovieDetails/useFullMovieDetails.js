@@ -33,7 +33,7 @@ const useFullMovieDetails = (movieId) => {
       })
     );
 
-    console.log(...res);
+    // console.log(...res);
     dispatch(addtoMovieDetails(res));
   };
 

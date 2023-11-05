@@ -11,9 +11,9 @@ const useMovieCredits = (movieId) => {
       API_OPTION
     );
     const json = await data.json();
-    console.log(json?.cast);
+    // console.log(json?.cast);
     // dispatch(addtoMovieDetailsCredit(json?.cast));
-    console.log("Cast updated");
+    // console.log("Cast updated");
   };
   useEffect(() => {
     getMovieCredits(movieId);

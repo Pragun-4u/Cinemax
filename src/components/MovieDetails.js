@@ -22,7 +22,7 @@ const MovieDetails = () => {
   const Details = useSelector((store) => store.movie?.MovieDetails);
   useFullMovieDetails(searchParams.get("searchquery"));
   // const Details = null;
-  console.log(Details);
+  // console.log(Details);
   if (Details?.length === 0) {
     return (
       <div className="w-screen h-screen bg-slate-800">
@@ -51,7 +51,7 @@ const MovieDetails = () => {
 
   // console.log(Details[2]);
 
-  console.log(Details[4]?.results?.slice(0, 10));
+  // console.log(Details[4]?.results?.slice(0, 10));
   // return null;
   return (
     <div className="w-screen">
